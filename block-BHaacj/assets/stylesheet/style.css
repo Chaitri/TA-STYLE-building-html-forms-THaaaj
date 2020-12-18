@@ -1,0 +1,388 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* GENERIC */
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Open Sans', sans-serif;
+	line-height: 1.5;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 32px;
+}
+
+.content-wrapper {
+	max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 32px;
+}
+
+.flex {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.align-stretch {
+	align-items: stretch;
+}
+
+.justify-around {
+	justify-content: space-around;
+}
+
+.section-header {
+	font-size: 30px;
+	margin: 20px 0;
+	text-transform: uppercase;
+}
+
+.btn {
+	display: inline-block;
+	padding: 12px 16px;
+	text-transform: uppercase;
+	text-decoration: none;
+	margin: 20px 0;
+	font-size: 14px;
+}
+
+.btn-primary {
+	background-color: #69c6ba;
+	color: white;
+}
+
+.btn-secondary {
+	background-color: white;
+	font-weight: 700;
+}
+
+.submit-btn {
+	background-color: #69c6ba;
+	color: white;
+	text-transform: uppercase;
+	padding: 12px 16px;
+	border: none;
+	margin: 10px;
+	width: 100%;
+}
+
+/* HEADER */
+
+.header {
+	padding: 40px 0;
+}
+
+.brand {
+	height: 40px;
+}
+
+.brand-name {
+	font-size: 32px;
+	font-weight: 800;
+	text-transform: uppercase;
+	margin-left: 12px;
+}
+
+.nav-bar a {
+	text-decoration: none;
+	margin-left: 50px;
+	color: black;
+	font-weight: 700;
+	font-size: 14px;
+}
+
+.nav-bar .selected {
+	color: #69c6ba;
+}
+
+/* HERO */
+
+.hero {
+	background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)) , url("../banner.jpg") 50% 50% no-repeat;
+	color: white;
+	text-align: center;
+	padding: 20px 0;
+}
+
+.hero-heading {
+	font-size: 32px;
+	text-transform: uppercase;
+	font-weight: 600;
+	margin: 20px 0;
+}
+
+.hero-desc {
+	font-size: 24px;
+	margin: 20px 0;
+	font-weight: 300;
+}
+
+.fa-angle-down { 
+	background-color: #69c6ba;
+	border-radius: 50%;
+	color: white;
+	/* display: flex; */
+	justify-content: center;
+	align-self: center;
+	width: 40px;
+	height: 40px;
+}
+
+.check-in-form {
+	background-color: #f5f6f6;
+	margin: 80px 0;
+	padding: 20px;
+	color: black;
+}
+
+.check-in-form input {
+	border: none;
+	background-color: #f5f6f6;
+	color: #868e96;
+}
+
+.check-in-form label {
+	display: block;
+	font-size: 14px;
+	font-weight: 700;
+}
+
+/* INTRO */
+
+.intro {
+	background-color: #efefef;
+	padding: 50px 0;
+	text-align: center;
+}
+
+.intro span {
+	font-weight: 700;
+}
+
+.intro-content {
+	color: #757677;
+	font-size: 14px;
+}
+
+/* DESTINATION */
+
+.destination-image {
+	width: 50%;
+}
+
+.destination-item {
+	color: white;
+	padding: 20px 50px;
+}
+
+.content-left {
+	transform: translateX(-10%);
+}
+
+.content-right {
+	transform: translateX(10%);
+}
+
+.carousel {
+	color: rgb(201, 199, 199);
+	background-color: rgba(0,0,0,0.5);
+	height: 40px;
+	width: 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0 2px;
+}
+
+.overlap-left {
+	background-color: #69c6ba;	
+}
+
+.overlap-right {
+	background-color: #c66995;	
+}
+
+.overlap-left a {
+	color: #69c6ba;
+}
+
+.overlap-right a {
+	color: #c66995;
+}
+
+.destination-heading {
+	font-size: 28px;
+	font-weight: 600;
+	margin: 10px 0;
+}
+
+.destination-content {
+	font-size: 14px;
+	font-weight: 300;
+	margin: 10px 0;
+}
+
+/* COUNTRIES */
+
+.countries {
+	background-color: #69c6ba;
+}
+
+.country-item {
+	width: 12%;
+	object-fit: contain;
+	margin: 30px 0;
+	text-decoration: none;
+	text-transform: uppercase;
+	color: white;
+	font-size: 16px;
+	text-align: center;
+}
+
+.country {
+	background-color: #69c6ba;
+}
+
+a.selected * {
+	background-color: #c66995;
+}
+
+/* HOTEL LISTINGS */
+
+.hotel-listings {
+	padding: 50px 0;
+	text-align: center;
+}
+
+.hotel-listing {
+	margin: 40px 0;
+	border: 1px solid #cccdce;
+}
+
+.hotel-details {
+	padding: 0 30px;
+	text-align: left;
+}
+
+.hotel-name {
+	font-size: 20px;
+	font-weight: 600;
+	text-transform: uppercase;
+	margin: 20px 0 5px 0;
+	color: #212529;
+}
+
+.hotel-location {
+	color: #c66995; 
+	font-weight: 600;
+	font-size: 14px;
+}
+
+.hotel-description {
+	color: #868e96;
+	font-size: 14px;
+	margin: 15px 0;
+}
+
+.hotel-price {
+	background-color: #69c6ba;
+	color: white;
+	text-decoration: none;
+	text-transform: uppercase;
+	width: 60%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.hotel-price .price {
+	font-size: 32px;
+	font-weight: 600;
+	margin-bottom: 10px;
+}
+
+.hotel-listing .button-curve {
+	transform: translateX(90%);
+}
+
+/* FOOTER */
+
+.contact-form {
+	background-color: white;
+	padding: 30px;
+	width: 40%;
+}
+
+.contact-input {
+	background-color: #f5f5f5;
+	padding: 10px;
+	border: none;
+	margin: 10px;
+	width: 100%;
+}
+
+.contact-subject {
+	width: 20%;
+}
+
+.footer-copyright {
+	background-color: #69c6ba;
+	color: white;
+	text-align: center;
+	padding: 50px 0;
+	font-size: 14px;
+}
