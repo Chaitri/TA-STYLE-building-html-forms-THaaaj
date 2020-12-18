@@ -55,7 +55,7 @@ table {
 
 body {
     background: url("../bg-intro-desktop.png") , #F88383;
-    padding: 80px 0;
+    padding-top: 50px;
     line-height: 1.5;
     font-family: 'Noto Sans JP', sans-serif;
 }
@@ -71,8 +71,8 @@ body {
     align-items: center;
 }
 
-section {
-    width: 50%;
+.flex-48 {
+    flex: 0 1 48%;
 }
 
 .heading {
@@ -89,6 +89,7 @@ section {
 }
 
 .offer {
+    display: block;
     background-color: #5d54a3;
     border-radius: 6px;
     padding: 16px;
@@ -96,6 +97,8 @@ section {
     font-weight: 700;
     text-align: center;
     border-radius: 10px;
+    text-decoration: none;
+    box-shadow: 0 6px 0px rgba(0, 0, 0, 0.2);
 }
 
 .offer span {
@@ -116,10 +119,10 @@ section {
     padding: 16px;
     margin: 20px 0;
     border-radius: 5px;
-    border: none;
     border: 1px solid #dfdfdf;
     color: #bdbcc1;
     font-weight: 700;
+    outline: 0;
 }
 
 .form-control:focus {
@@ -128,7 +131,7 @@ section {
     color: #3d3c42;
 }
 
-button {
+.btn {
     background-color: #37cc8a;
     color: white;
     text-transform: uppercase;
@@ -137,6 +140,8 @@ button {
     padding: 16px;
     border-radius: 5px;
     width: 100%;
+    letter-spacing: 1px;
+    border-bottom: 3px solid rgba(0, 0, 0, 0.2);
     letter-spacing: 1px;
 }
 
@@ -148,7 +153,8 @@ button {
     font-weight: 300;
 }
 
-.terms span {
+.terms a {
     color: #eba4a0;
     font-weight: 700;
+    text-decoration: none;
 }
