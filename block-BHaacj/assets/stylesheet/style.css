@@ -1,0 +1,536 @@
+/* Variables */
+
+:root {
+	--primary : rgb(105, 198, 187);
+	--secondary : rgb(198, 105, 149);
+	--textDark : rgb(33, 37, 41);
+	--textLight : rgb(105, 108, 108);
+}
+
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* GENERIC */
+
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+
+a {
+	text-decoration: none;
+}
+
+body {
+	font-family: 'Open Sans', sans-serif;
+	line-height: 1.5;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 32px;
+}
+
+.content-wrapper {
+	max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 32px;
+}
+
+.flex {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.flex-20 {
+	flex: 0 1 20%;
+}
+
+.flex-30 {
+	flex: 0 1 30%;
+}
+
+.flex-46 {
+	flex: 0 1 46%;
+}
+
+.flex-50 {
+	flex: 0 1 50%;
+}
+
+.grow {
+	flex: 1 1 auto;
+}
+
+.align-stretch {
+	align-items: stretch;
+}
+
+.align-start {
+	align-items: flex-start;
+}
+
+.justify-around {
+	justify-content: space-around;
+}
+
+.margin-top {
+	margin-top: 48px;	
+}
+
+.section-header {
+	font-size: 30px;
+	margin: 20px 0;
+	text-transform: uppercase;
+	color: var(--textDark)
+}
+
+.btn {
+	display: inline-block;
+	padding: 12px 16px;
+	text-transform: uppercase;
+	text-decoration: none;
+	margin: 20px 0;
+	font-size: 14px;
+	font-weight: 600;
+	letter-spacing: 1px;
+	transition: box-shadow 200ms ease-in-out;
+}
+
+.btn-primary {
+	background-color: var(--primary);
+	color: white;
+}
+
+.btn-secondary {
+	background-color: white;
+	color: var(--primary);
+}
+
+.btn:hover {
+	box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+/* HEADER */
+
+.header {
+	padding: 32px 120px;
+}
+
+.brand {
+	height: 40px;
+}
+
+.brand-name {
+	font-size: 32px;
+	font-weight: 800;
+	text-transform: uppercase;
+	margin-left: 12px;
+	color: var(--textDark);
+}
+
+.nav-bar a {
+	text-decoration: none;
+	margin-left: 50px;
+	color: var(--textDark);
+	font-weight: 700;
+	font-size: 14px;
+}
+
+.nav-bar .selected {
+	color: var(--primary);
+}
+
+.nav-bar a:hover {
+	color: var(--primary);
+}
+
+/* MAIN */
+
+main, footer {
+	background-color: #e6e6e6;
+}
+
+/* HERO */
+
+.hero {
+	background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)) , url("../banner.jpg") 50% 50% no-repeat;
+	color: white;
+	text-align: center;
+	padding: 70px 0;
+}
+
+.hero-heading {
+	font-size: 32px;
+	text-transform: uppercase;
+	font-weight: 600;
+	margin: 20px 0;
+}
+
+.hero-desc {
+	font-size: 24px;
+	margin: 20px 0;
+	font-weight: 300;
+}
+
+.icon-box {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	margin: 0 auto;
+	background-color: var(--primary);
+	line-height: 40px;
+}
+
+.icon-box i { 
+	color: white;
+	font-size: 18px;
+}
+
+/* FORM */
+
+form {
+	background-color: #f5f6f6;
+	max-width: 968px;
+	margin: 0 auto;
+	padding: 32px;
+	margin-top: 80px;
+}
+
+label {
+	display: block;
+	font-size: 14px;
+	font-weight: 600;
+	color: var(--textDark);
+	text-align: left;
+	margin-bottom: 8px;
+}
+
+.check-in-form {
+	margin: 80px 0;
+	padding: 20px;
+	color: black;
+}
+
+.form-control {
+	display: block;
+	width: 100%;
+	border: 0;
+	outline: 0;
+	padding: 10px 16px;
+	border: 1px solid transparent;
+	color: var(--textLight);
+}
+
+.form-control:focus {
+	border-color: var(--primary);
+}
+
+.form-control::placeholder {
+	color: var(--textLight);
+}
+
+form .btn {
+	width: 100%;
+	border: 0;
+	box-shadow: none;
+}
+
+
+.check-in-form input {
+	border: none;
+	background-color: #f5f6f6;
+	color: #868e96;
+}
+
+.check-in-form label {
+	display: block;
+	font-size: 14px;
+	font-weight: 700;
+}
+
+/* INTRO */
+
+.intro {
+	background-color: #efefef;
+	padding: 50px 0;
+	text-align: center;
+}
+
+.intro span {
+	font-weight: 700;
+}
+
+.intro-content {
+	color: var(--textLight);
+	font-size: 14px;
+}
+
+/* DESTINATION */
+
+.destinations {
+	background-color: white;
+}
+
+.destination {
+	position: relative;
+}
+
+.destination-image {
+	width: 50%;
+}
+
+.destination-item {
+	color: white;
+	padding: 20px 50px;
+}
+
+.content-left {
+	transform: translateX(-10%);
+}
+
+.content-right {
+	transform: translateX(10%);
+}
+
+.carousel {
+	color: rgb(201, 199, 199);
+	background-color: rgba(0,0,0,0.5);
+	height: 40px;
+	width: 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0 2px;
+	position: absolute;
+	top: 50%;
+}
+
+.carousel-left {
+	left: 420px;
+}
+
+.carousel-right {
+	left: 470px;
+}
+
+.destination-right .carousel-left {
+	left: 620px;
+}
+
+.destination-right .carousel-right {
+	left: 670px;
+}
+
+.overlap-left {
+	background-color: var(--primary);	
+}
+
+.overlap-right {
+	background-color: var(--secondary);	
+}
+
+.overlap-left a {
+	color: var(--primary);	
+}
+
+.overlap-right a {
+	color: var(--secondary);	
+}
+
+.destination-heading {
+	font-size: 28px;
+	font-weight: 600;
+	margin: 10px 0;
+}
+
+.destination-content {
+	font-size: 14px;
+	font-weight: 300;
+	margin: 10px 0;
+}
+
+/* COUNTRIES */
+
+.countries {
+	background-color: var(--primary);
+}
+
+.country-item {
+	width: 12%;
+	object-fit: contain;
+	padding: 30px 0;
+	text-decoration: none;
+	text-transform: uppercase;
+	color: white;
+	font-size: 16px;
+	text-align: center;
+}
+
+.country {
+	font-size: 0;
+}
+
+.countries .selected {
+	background-color: var(--secondary);
+}
+
+.countries .country-item:hover {
+	background-color: var(--secondary);
+}
+
+/* HOTEL LISTINGS */
+
+.hotel-listings {
+	padding: 50px 0;
+	text-align: center;
+	background-color: white;
+}
+
+.hotel-listing {
+	margin: 40px 0;
+	box-shadow: 0 0 1px rgba(0,0,0,0.6);
+}
+
+.hotel-details {
+	padding: 0 30px;
+	text-align: left;
+}
+
+.hotel-name {
+	font-size: 20px;
+	font-weight: 600;
+	text-transform: uppercase;
+	margin: 20px 0 5px 0;
+	color: var(--textDark);
+}
+
+.hotel-location {
+	color: var(--secondary);
+	font-weight: 600;
+	font-size: 14px;
+}
+
+.hotel-description {
+	color: var(--textLight);
+	font-size: 14px;
+	margin: 15px 0;
+}
+
+.hotel-price {
+	background-color: var(--primary);
+	color: white;
+	text-decoration: none;
+	text-transform: uppercase;
+	width: 60%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.hotel-price .price {
+	font-size: 32px;
+	font-weight: 600;
+	margin-bottom: 10px;
+}
+
+.hotel-listing .button-curve {
+	transform: translateX(90%);
+}
+
+/* FOOTER */
+
+.footer iframe {
+	font-size: 0;
+}
+
+.contact {
+	position: relative;
+}
+
+.overlay {
+	background-color: rgba(0,0,0,0.4);
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+.contact .contact-form {
+	position: absolute;
+	top: -10px;
+	right: 80px;
+}
+
+.contact-form {
+	background-color: white;
+	padding: 30px;
+	width: 40%;
+}
+
+.contact-form .form-control {
+	margin-bottom: 16px;
+	background-color: #f5f5f5;
+}
+
+.contact-form textarea.form-control {
+	font-family: 'Open Sans', sans-serif;
+}
+
+.footer-copyright {
+	background-color: var(--primary);
+	color: white;
+	text-align: center;
+	padding: 30px 0;
+	font-size: 12px;
+}
