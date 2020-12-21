@@ -1,3 +1,13 @@
+/* Variables */
+
+:root {
+	--primary : rgb(105, 198, 187);
+	--secondary : rgb(198, 105, 149);
+	--textDark : rgb(33, 37, 41);
+	--textLight : rgb(105, 108, 108);
+}
+
+
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -49,8 +59,12 @@ table {
 
 /* GENERIC */
 
-* {
+*, *::before, *::after {
 	box-sizing: border-box;
+}
+
+a {
+	text-decoration: none;
 }
 
 body {
@@ -76,18 +90,47 @@ body {
 	align-items: center;
 }
 
+.flex-20 {
+	flex: 0 1 20%;
+}
+
+.flex-30 {
+	flex: 0 1 30%;
+}
+
+.flex-46 {
+	flex: 0 1 46%;
+}
+
+.flex-50 {
+	flex: 0 1 50%;
+}
+
+.grow {
+	flex: 1 1 auto;
+}
+
 .align-stretch {
 	align-items: stretch;
+}
+
+.align-start {
+	align-items: flex-start;
 }
 
 .justify-around {
 	justify-content: space-around;
 }
 
+.margin-top {
+	margin-top: 48px;	
+}
+
 .section-header {
 	font-size: 30px;
 	margin: 20px 0;
 	text-transform: uppercase;
+	color: var(--textDark)
 }
 
 .btn {
@@ -97,32 +140,29 @@ body {
 	text-decoration: none;
 	margin: 20px 0;
 	font-size: 14px;
+	font-weight: 600;
+	letter-spacing: 1px;
+	transition: box-shadow 200ms ease-in-out;
 }
 
 .btn-primary {
-	background-color: #69c6ba;
+	background-color: var(--primary);
 	color: white;
 }
 
 .btn-secondary {
 	background-color: white;
-	font-weight: 700;
+	color: var(--primary);
 }
 
-.submit-btn {
-	background-color: #69c6ba;
-	color: white;
-	text-transform: uppercase;
-	padding: 12px 16px;
-	border: none;
-	margin: 10px;
-	width: 100%;
+.btn:hover {
+	box-shadow: 0 2px 6px rgba(0,0,0,0.3);
 }
 
 /* HEADER */
 
 .header {
-	padding: 40px 0;
+	padding: 32px 120px;
 }
 
 .brand {
@@ -134,18 +174,29 @@ body {
 	font-weight: 800;
 	text-transform: uppercase;
 	margin-left: 12px;
+	color: var(--textDark);
 }
 
 .nav-bar a {
 	text-decoration: none;
 	margin-left: 50px;
-	color: black;
+	color: var(--textDark);
 	font-weight: 700;
 	font-size: 14px;
 }
 
 .nav-bar .selected {
-	color: #69c6ba;
+	color: var(--primary);
+}
+
+.nav-bar a:hover {
+	color: var(--primary);
+}
+
+/* MAIN */
+
+main, footer {
+	background-color: #e6e6e6;
 }
 
 /* HERO */
@@ -154,7 +205,7 @@ body {
 	background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)) , url("../banner.jpg") 50% 50% no-repeat;
 	color: white;
 	text-align: center;
-	padding: 20px 0;
+	padding: 70px 0;
 }
 
 .hero-heading {
@@ -170,23 +221,69 @@ body {
 	font-weight: 300;
 }
 
-.fa-angle-down { 
-	background-color: #69c6ba;
-	border-radius: 50%;
-	color: white;
-	/* display: flex; */
-	justify-content: center;
-	align-self: center;
+.icon-box {
 	width: 40px;
 	height: 40px;
+	border-radius: 50%;
+	margin: 0 auto;
+	background-color: var(--primary);
+	line-height: 40px;
+}
+
+.icon-box i { 
+	color: white;
+	font-size: 18px;
+}
+
+/* FORM */
+
+form {
+	background-color: #f5f6f6;
+	max-width: 968px;
+	margin: 0 auto;
+	padding: 32px;
+	margin-top: 80px;
+}
+
+label {
+	display: block;
+	font-size: 14px;
+	font-weight: 600;
+	color: var(--textDark);
+	text-align: left;
+	margin-bottom: 8px;
 }
 
 .check-in-form {
-	background-color: #f5f6f6;
 	margin: 80px 0;
 	padding: 20px;
 	color: black;
 }
+
+.form-control {
+	display: block;
+	width: 100%;
+	border: 0;
+	outline: 0;
+	padding: 10px 16px;
+	border: 1px solid transparent;
+	color: var(--textLight);
+}
+
+.form-control:focus {
+	border-color: var(--primary);
+}
+
+.form-control::placeholder {
+	color: var(--textLight);
+}
+
+form .btn {
+	width: 100%;
+	border: 0;
+	box-shadow: none;
+}
+
 
 .check-in-form input {
 	border: none;
@@ -213,11 +310,19 @@ body {
 }
 
 .intro-content {
-	color: #757677;
+	color: var(--textLight);
 	font-size: 14px;
 }
 
 /* DESTINATION */
+
+.destinations {
+	background-color: white;
+}
+
+.destination {
+	position: relative;
+}
 
 .destination-image {
 	width: 50%;
@@ -245,22 +350,40 @@ body {
 	justify-content: center;
 	align-items: center;
 	margin: 0 2px;
+	position: absolute;
+	top: 50%;
+}
+
+.carousel-left {
+	left: 420px;
+}
+
+.carousel-right {
+	left: 470px;
+}
+
+.destination-right .carousel-left {
+	left: 620px;
+}
+
+.destination-right .carousel-right {
+	left: 670px;
 }
 
 .overlap-left {
-	background-color: #69c6ba;	
+	background-color: var(--primary);	
 }
 
 .overlap-right {
-	background-color: #c66995;	
+	background-color: var(--secondary);	
 }
 
 .overlap-left a {
-	color: #69c6ba;
+	color: var(--primary);	
 }
 
 .overlap-right a {
-	color: #c66995;
+	color: var(--secondary);	
 }
 
 .destination-heading {
@@ -278,13 +401,13 @@ body {
 /* COUNTRIES */
 
 .countries {
-	background-color: #69c6ba;
+	background-color: var(--primary);
 }
 
 .country-item {
 	width: 12%;
 	object-fit: contain;
-	margin: 30px 0;
+	padding: 30px 0;
 	text-decoration: none;
 	text-transform: uppercase;
 	color: white;
@@ -293,11 +416,15 @@ body {
 }
 
 .country {
-	background-color: #69c6ba;
+	font-size: 0;
 }
 
-a.selected * {
-	background-color: #c66995;
+.countries .selected {
+	background-color: var(--secondary);
+}
+
+.countries .country-item:hover {
+	background-color: var(--secondary);
 }
 
 /* HOTEL LISTINGS */
@@ -305,11 +432,12 @@ a.selected * {
 .hotel-listings {
 	padding: 50px 0;
 	text-align: center;
+	background-color: white;
 }
 
 .hotel-listing {
 	margin: 40px 0;
-	border: 1px solid #cccdce;
+	box-shadow: 0 0 1px rgba(0,0,0,0.6);
 }
 
 .hotel-details {
@@ -322,23 +450,23 @@ a.selected * {
 	font-weight: 600;
 	text-transform: uppercase;
 	margin: 20px 0 5px 0;
-	color: #212529;
+	color: var(--textDark);
 }
 
 .hotel-location {
-	color: #c66995; 
+	color: var(--secondary);
 	font-weight: 600;
 	font-size: 14px;
 }
 
 .hotel-description {
-	color: #868e96;
+	color: var(--textLight);
 	font-size: 14px;
 	margin: 15px 0;
 }
 
 .hotel-price {
-	background-color: #69c6ba;
+	background-color: var(--primary);
 	color: white;
 	text-decoration: none;
 	text-transform: uppercase;
@@ -361,28 +489,48 @@ a.selected * {
 
 /* FOOTER */
 
+.footer iframe {
+	font-size: 0;
+}
+
+.contact {
+	position: relative;
+}
+
+.overlay {
+	background-color: rgba(0,0,0,0.4);
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+.contact .contact-form {
+	position: absolute;
+	top: -10px;
+	right: 80px;
+}
+
 .contact-form {
 	background-color: white;
 	padding: 30px;
 	width: 40%;
 }
 
-.contact-input {
+.contact-form .form-control {
+	margin-bottom: 16px;
 	background-color: #f5f5f5;
-	padding: 10px;
-	border: none;
-	margin: 10px;
-	width: 100%;
 }
 
-.contact-subject {
-	width: 20%;
+.contact-form textarea.form-control {
+	font-family: 'Open Sans', sans-serif;
 }
 
 .footer-copyright {
-	background-color: #69c6ba;
+	background-color: var(--primary);
 	color: white;
 	text-align: center;
-	padding: 50px 0;
-	font-size: 14px;
+	padding: 30px 0;
+	font-size: 12px;
 }
